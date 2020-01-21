@@ -18,7 +18,6 @@ def conectar(paginaInicial, paginaFinal):
         for button in conectButtons:
             time.sleep(1)
             if button.text == 'Connect':
-                print(button.text)
                 button.click()
                 time.sleep(1)       
                 driver.find_element_by_xpath("//button[@class='ml1 artdeco-button artdeco-button--3 artdeco-button--primary ember-view']").click()
