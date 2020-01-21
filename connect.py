@@ -10,7 +10,7 @@ def conectar(paginaInicial, paginaFinal):
     conectar = 0
     for i in range(paginaInicial, paginaFinal +1):
         time.sleep(1)
-        driver.get("https://www.linkedin.com/search/results/people/?facetIndustry=%5B%22102%22%5D&facetNetwork=%5B%22S%22%5D&origin=FACETED_SEARCH&page="+str(i))
+        driver.get("https://www.linkedin.com/search/results/people/?facetIndustry=%5B%22102%22%5D&facetNetwork=%5B%22S%22%5D&origin=FACETED_SEARCH&page="+str(i)) # here you should place the url of a 'specific work area.
         time.sleep(1)
         driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
         time.sleep(1)
