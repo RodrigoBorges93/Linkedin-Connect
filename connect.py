@@ -46,7 +46,7 @@ def main():
     print('Started Linkedin Script')
     username_text = input('E-mail: ')
     password_text = getpass()
-    driver = webdriver.Firefox('C:\\Users\\b8m7\\Desktop\\linkedinBot')
+    driver = webdriver.Firefox('') # Type your webdriver PATH
     url = 'https://www.linkedin.com/login?fromSignIn=true&trk=guest_homepage-basic_nav-header-signin'
     driver.get(url)
     time.sleep(3)
