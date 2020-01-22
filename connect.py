@@ -6,6 +6,17 @@ from getpass import getuser
 import time
 
 
+def like():
+    for i in range(0,3):
+        time.sleep(1)
+        driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+    botoes = driver.find_elements_by_xpath("//button[@class='react-button__trigger artdeco-button artdeco-button--muted artdeco-button--4 artdeco-button--tertiary ember-view']")
+    
+    for botao in botoes:
+        botao.click()
+        time.sleep(5)
+        print('Publicação curtida')
+
 def conectar(paginaInicial, paginaFinal):
     conectar = 0
     for i in range(paginaInicial, paginaFinal +1):
@@ -44,15 +55,28 @@ def login():
 def main():
     global username_text, password_text, driver
     print('Started Linkedin Script')
-    username_text = input('E-mail: ')
+    username_text = input('Digite seu e-mail: ')
     password_text = getpass()
-    driver = webdriver.Firefox('') # Type your webdriver PATH
+    print('Choose a specific script bellow: ')
+    print('1 - Auto-Like \n2 - Auto-Connect \n3 - Both\n')
+    option = input('Your choice: ')
+    while option not in ['1', '2', '3']:
+        option = input('You didnt choose a valid option, please, try again: ')
+    driver = webdriver.Firefox('C:\\Users\\b8m7\\Desktop\\linkedinBot')
     url = 'https://www.linkedin.com/login?fromSignIn=true&trk=guest_homepage-basic_nav-header-signin'
     driver.get(url)
     time.sleep(3)
     login()
     time.sleep(2)
-    conectar(1,7)
+    if option == '2':
+        conectar(1,7)
+    elif option == '1':
+        like()
+    elif option == '3':
+        like()
+        conectar(1,2)
+    else:
+        print('Não existe esta opção!')
     print('Script Linkedin done!')
 
 
