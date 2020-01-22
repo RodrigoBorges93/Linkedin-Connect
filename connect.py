@@ -62,7 +62,7 @@ def main():
     option = input('Your choice: ')
     while option not in ['1', '2', '3']:
         option = input('You didnt choose a valid option, please, try again: ')
-    driver = webdriver.Firefox('C:\\Users\\b8m7\\Desktop\\linkedinBot')
+    driver = webdriver.Firefox('') # PATH to webdriver
     url = 'https://www.linkedin.com/login?fromSignIn=true&trk=guest_homepage-basic_nav-header-signin'
     driver.get(url)
     time.sleep(3)
@@ -75,8 +75,6 @@ def main():
     elif option == '3':
         like()
         conectar(1,2)
-    else:
-        print('Não existe esta opção!')
     print('Script Linkedin done!')
 
 
